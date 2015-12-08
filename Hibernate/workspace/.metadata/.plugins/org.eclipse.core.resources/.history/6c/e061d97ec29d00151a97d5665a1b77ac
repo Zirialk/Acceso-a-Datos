@@ -1,0 +1,19 @@
+package pr08;
+
+import modelo.Profesor;
+
+public class Resultados {
+	private String cod;
+	private String nombre;
+	private int numAsignaturas;
+	private int horasSemanales;
+	private int numCursos;
+	
+	public Resultados(Profesor p){
+		numAsignaturas = 0;
+		horasSemanales = 0;
+		numCursos = 0;
+		
+		
+	}
+}

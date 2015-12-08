@@ -1,0 +1,16 @@
+package pr07;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+import sessionFactory.SessionFactoryUtil;
+
+//Dado un curso concreto, mostrar todos los datos de sus asignaturas. (Utilizar array de object).
+public class ConArrayObject {
+	public static void main(String[] args) {
+		SessionFactory sesionFactory = SessionFactoryUtil.getSessionFactory();
+		Session sesion = sesionFactory.openSession();
+		Object[] array;
+		
+	}
+}

@@ -1,0 +1,17 @@
+package pr08;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+import sessionFactory.SessionFactoryUtil;
+
+public class Main {
+	public static void main(String[] args) {
+		SessionFactory sesionFactory = SessionFactoryUtil.getSessionFactory();
+		Session session = sesionFactory.openSession();
+		
+		Query q=session.createQuery("select new baldomero.PR008Clase(p.codProf, p.nombre, count(distinct r.asignatura), count(h.tramohorario), count(distinct r.curso)) "
+				+ "from Profesor p, Reparto r, Horario h where p.codProf=r.profesor.codProf "
+				+ "and r.asignatura.codAsignatura=h.asignatura.codAsignatura group by p.codProf");
+	}
+}

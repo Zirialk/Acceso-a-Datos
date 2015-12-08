@@ -1,0 +1,28 @@
+package pr11Fetch;
+
+import java.util.Iterator;
+import java.util.List;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+import modelo.Curso;
+import modelo.Ofertaeducativa;
+import sessionFactory.SessionFactoryUtil;
+
+public class ConFetch {
+
+	public static void main(String[] args) {
+		SessionFactory fabrica = SessionFactoryUtil.getSessionFactory();
+		Session session = fabrica.openSession();
+		
+		Query q = session.createQuery("From Ofertaeducativa oe LEFT JOIN FETCH oe.cursos"); 
+		Iterator<Ofertaeducativa> list = q.iterate();
+		Ofertaeducativa oe;
+		Curso c;
+		
+
+	}
+
+}

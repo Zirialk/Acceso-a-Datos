@@ -1,0 +1,15 @@
+package pr07;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+import sessionFactory.SessionFactoryUtil;
+
+public class ConArrayObject {
+	public static void main(String[] args) {
+		SessionFactory sesionFactory = SessionFactoryUtil.getSessionFactory();
+		Session sesion = sesionFactory.openSession();
+		
+		
+	}
+}

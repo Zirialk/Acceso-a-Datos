@@ -1,0 +1,30 @@
+package pr11Fetch;
+
+import java.util.Iterator;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+import modelo.Curso;
+import modelo.Ofertaeducativa;
+import sessionFactory.SessionFactoryUtil;
+
+public class SinFetch {
+	public static void main(String[] args) {
+		SessionFactory fabrica = SessionFactoryUtil.getSessionFactory();
+		Session session = fabrica.openSession();
+		
+		Query q = session.createQuery("FROM Ofertaeducativa oe LEFT JOIN oe.cursos");
+		Iterator it = q.iterate();
+		Ofertaeducativa oe;
+		
+		Curso c;
+		Object[] par;
+		
+		while(it.hasNext()){
+			par= (Object[]) it.next();
+		}
+		
+	}
+}

@@ -1,0 +1,28 @@
+package pr07;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+import modelo.Asignatura;
+import sessionFactory.SessionFactoryUtil;
+
+//Dado un curso concreto, mostrar todos los datos de sus asignaturas. (Utilizar array de object).
+public class ConArrayObject {
+	public static void main(String[] args) {
+		SessionFactory sesionFactory = SessionFactoryUtil.getSessionFactory();
+		Session sesion = sesionFactory.openSession();
+		Object[] array;
+		//Por arreglar.
+		Query q = sesion.createQuery("SELECT asignatura FROM Reparto WHERE curso = (SELECT id FROM Curso WHERE codOe = ? AND codCurso = ?)");
+		q.setString(0, "DAM");
+		q.setString(1, "PROG");
+		array = q.list().toArray();
+		
+		for(Object a : array)
+			System.out.printf("Codigo Asignatura: %s, Nombre: %s\n", ((Asignatura)a).getCodAsignatura(), ((Asignatura)a).getNombre());
+		
+		sesion.close();
+		
+	}
+}

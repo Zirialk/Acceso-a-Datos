@@ -1,2 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.mysql.fabric.xmlrpc.base.Data"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="modelo.Historicoprofe"/>
+<fullyQualifiedTypeName name="org.hibernate.Transaction"/>
+<fullyQualifiedTypeName name="antlr.collections.List"/>
+<fullyQualifiedTypeName name="modelo.Reparto"/>
+<fullyQualifiedTypeName name="pr01Insert.Main"/>
+<fullyQualifiedTypeName name="modelo.Asignatura"/>
+<fullyQualifiedTypeName name="modelo.RepartoId"/>
+<fullyQualifiedTypeName name="modelo.Profesor"/>
+<fullyQualifiedTypeName name="pr08.Resultados"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.Set"/>
+<fullyQualifiedTypeName name="sessionFactory.SessionFactoryUtil"/>
+<fullyQualifiedTypeName name="org.hibernate.SessionFactory"/>
+<fullyQualifiedTypeName name="org.hibernate.Session"/>
+<fullyQualifiedTypeName name="org.hibernate.Query"/>
+<fullyQualifiedTypeName name="java.util.Iterator"/>
+<fullyQualifiedTypeName name="modelo.Curso"/>
+<fullyQualifiedTypeName name="modelo.Ofertaeducativa"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,10 @@
+package pr11Fetch;
+
+public class ConFetch {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

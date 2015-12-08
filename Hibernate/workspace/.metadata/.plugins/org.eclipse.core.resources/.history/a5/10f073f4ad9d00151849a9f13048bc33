@@ -1,0 +1,7 @@
+package pr07;
+
+public class ConArrayObject {
+	public static void main(String[] args) {
+		
+	}
+}

@@ -1,0 +1,18 @@
+package pr11Fetch;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+import sessionFactory.SessionFactoryUtil;
+
+public class SinFetch {
+	public static void main(String[] args) {
+		SessionFactory fabrica = SessionFactoryUtil.getSessionFactory();
+		Session session = fabrica.openSession();
+		
+		Query cons = session.createQuery("FROM Ofertaeducativa oe LEFT JOIN oe.cursos");
+		
+		
+	}
+}
