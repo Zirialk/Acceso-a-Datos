@@ -1,0 +1,26 @@
+package pr02Update;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import modelo.Profesor;
+import sessionFactory.SessionFactoryUtil;
+
+public class ConSession {
+	public static void main(String[] args) {
+		SessionFactory sessionFactory = SessionFactoryUtil.getSessionFactory();
+		Session session = sessionFactory.getCurrentSession();
+		Transaction transaction = session.beginTransaction();
+		
+		Profesor prof = new Profesor();
+		prof = (Profesor) session.load(Profesor.class, "new");
+		System.out.println("Nombre antiguo: "+prof.getNombre());
+		prof.setNombre("Nombre cambiado");
+		System.out.println("Nombre nuevo: "+prof.getNombre());
+		
+		session.update(prof);
+		transaction.commit();
+		session.close();
+	}
+}

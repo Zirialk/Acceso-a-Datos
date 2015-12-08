@@ -1,0 +1,20 @@
+package pr02Update;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import modelo.Profesor;
+import sessionFactory.SessionFactoryUtil;
+
+public class ConSession {
+	public static void main(String[] args) {
+		SessionFactory sessionFactory = SessionFactoryUtil.getSessionFactory();
+		Session session = sessionFactory.getCurrentSession();
+		Transaction transaction = session.beginTransaction();
+		
+		Profesor prof = new Profesor();
+		
+		
+	}
+}

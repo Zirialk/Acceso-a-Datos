@@ -1,0 +1,27 @@
+package pr03HistoricoProfesores;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import sessionFactory.SessionFactoryUtil;
+
+public class ConHQL {
+	public static void main(String[] args) {
+		SessionFactory sessionFactory = SessionFactoryUtil.getSessionFactory();
+		Session session = sessionFactory.openSession();
+		Transaction trans = session.beginTransaction();
+		
+		String insertHQL ="INSERT INTO Historicoprofe (codProf,nombre,alta,fechaDeNacimiento) SELECT codProf, nombre, alta, fechaDeNacimiento FROM Profesor WHERE codProf = ?";
+		
+		Query q = session.createQuery(insertHQL);
+		q.setString(0, "new");
+		int i = q.executeUpdate();
+		
+		if(i == 1)
+			System.out.println("Profesor introducido en el historico");
+		trans.commit();
+		session.close();
+	}
+}

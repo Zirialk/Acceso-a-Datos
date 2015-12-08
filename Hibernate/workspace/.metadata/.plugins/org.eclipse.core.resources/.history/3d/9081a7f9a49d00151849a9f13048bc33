@@ -1,0 +1,15 @@
+package pr04SelectNombres;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+import sessionFactory.SessionFactoryUtil;
+
+public class ConList {
+	public static void main(String[] args) {
+		SessionFactory sesionFactory = SessionFactoryUtil.getSessionFactory();
+		Session sesion = sesionFactory.openSession();
+		
+		
+	}
+}

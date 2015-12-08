@@ -1,0 +1,13 @@
+package pr05UniqueResult;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+import sessionFactory.SessionFactoryUtil;
+
+public class ConPregunta {
+	public static void main(String[] args) {
+		SessionFactory sessionFactory = SessionFactoryUtil.getSessionFactory();
+		Session session = sessionFactory.getCurrentSession(); 
+	}
+}

@@ -1,0 +1,17 @@
+package pr03HistoricoProfesores;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import sessionFactory.SessionFactoryUtil;
+
+public class ConSession {
+	public static void main(String[] args) {
+		SessionFactory sessionFactory = SessionFactoryUtil.getSessionFactory();
+		Session session = sessionFactory.openSession();
+		Transaction transaction = session.beginTransaction();
+		
+		
+	}
+}

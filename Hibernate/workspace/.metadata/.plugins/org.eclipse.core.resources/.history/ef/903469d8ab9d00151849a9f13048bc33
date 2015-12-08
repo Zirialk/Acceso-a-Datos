@@ -1,0 +1,7 @@
+package pr06SelectHoras;
+
+public class Main {
+	public static void main(String[] args) {
+		
+	}
+}

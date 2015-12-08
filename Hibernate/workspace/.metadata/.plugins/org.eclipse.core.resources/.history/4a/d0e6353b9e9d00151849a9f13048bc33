@@ -1,0 +1,34 @@
+package pr02Update;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import sessionFactory.SessionFactoryUtil;
+
+public class ConHQL {
+	public static void main(String[] args) {
+		SessionFactory sessionFactory = SessionFactoryUtil.getSessionFactory();
+		Session session = sessionFactory.openSession();
+		Transaction transaction = session.beginTransaction();
+												//Se puede hacer con :nuevoNombre o ? 
+		String hql = "UPDATE Profesor p SET p.nombre = :nuevoNombre WHERE p.codProf = :codProf";
+		int i;
+		/* 
+		 * String updateHQL = "update Profesor p set p.nombre = :nuevoNombre where p.codProf = :codProf";
+  i = sesion.createQuery(updateHQL).setString("nuevoNombre", "Juanito Jiménez Mod2").setString("codProf", "PR1").executeUpdate();
+		 * 
+		 * */
+		Query q = session.createQuery(hql);
+		q.setString("nuevoNombre", "NombreHQL");
+		q.setString(1, "new");
+		i = q.executeUpdate();
+		
+		if(i == 1)
+			System.out.println("Profesor modificado otra vez");
+		
+		transaction.commit();
+		session.close();
+	}
+}

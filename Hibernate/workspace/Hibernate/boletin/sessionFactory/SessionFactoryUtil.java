@@ -1,0 +1,31 @@
+package sessionFactory;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.hibernate.cfg.Configuration;
+
+public class SessionFactoryUtil {
+	/**
+	 * La fábrica de sesiones.
+	 */
+	private static final SessionFactory sessionFactory;
+	
+	static {
+		// Configuración 
+		Configuration config = new Configuration();
+		config.configure();
+		
+		/* Constructor del Registro de Servicios,
+		/* y posterior configuración */
+		StandardServiceRegistryBuilder serviceRegistry = new StandardServiceRegistryBuilder();
+		serviceRegistry.applySettings(config.getProperties());
+		
+		/* Creamos la fábrica de sesiones de una vez,
+		 * pasándole por constructor el Registro de Servicios. */
+		sessionFactory = config.buildSessionFactory(serviceRegistry.build());
+		
+	}
+	public static SessionFactory getSessionFactory() {
+		return sessionFactory;
+	}
+}
